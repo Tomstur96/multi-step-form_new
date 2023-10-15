@@ -1,0 +1,205 @@
+@use "../abstracts" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // height: 100%;
+  overflow-x: hidden;
+  @include mq(medium, $type: min) {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: 1fr auto;
+    position: relative;
+  }
+
+  @include mq(large, $type: min) {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+.section {
+  &_1 {
+    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+
+    @include mq(medium, $type: min) {
+      height: 100%;
+      background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+      background-size: contain;
+      margin-block-end: size(100);
+      margin-block-start: size(16);
+      margin-inline-start: size(16);
+    }
+
+    @include mq(large, $type: min) {
+      align-self: center;
+      justify-self: center;
+      background-size: auto;
+      width: 25vw;
+      height: 100%;
+    }
+  }
+
+  &_2 {
+    background-color: clr(neutral, 700);
+    @include mq(medium, $type: min) {
+      display: grid;
+      justify-content: flex-start;
+      align-content: center;
+      height: 100%;
+      background-color: transparent;
+      margin-block-start: size(56);
+    }
+  }
+
+  &_3 {
+    button[type="submit"] {
+      margin-inline-start: auto;
+      margin-inline-end: size(16);
+      margin-block: size(16);
+      @include mq(medium, $type: min) {
+        position: absolute;
+        bottom: 0;
+        right: size(100);
+      }
+    }
+  }
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mq(medium, $type: min) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-inline-start: size(32);
+    margin-block-start: size(40);
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &_number {
+    // width: 33px;
+    // height: 33px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: size(32);
+    background-color: transparent;
+    border: 1px solid clr(neutral, 100);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: fs(200);
+    font-weight: $fw-500;
+
+    &:not(:last-child) {
+      margin-inline-end: size(16);
+    }
+  }
+
+  &_details {
+    @include mq(small, $type: max) {
+      display: none;
+    }
+    @include mq(small, medium, between) {
+      display: none;
+    }
+
+    @include mq(medium, $type: min) {
+      h3 {
+        font-size: fs(100);
+        font-weight: $fw-400;
+        text-transform: uppercase;
+      }
+      span {
+        font-size: fs(200);
+        font-weight: $fw-700;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: size(22);
+
+  @include mq(medium, $type: min) {
+    justify-content: center;
+    align-items: stretch;
+    margin-block-end: size(92);
+  }
+
+  margin-block-start: calc(-1 * 73px);
+  margin-block-end: calc(1.2 * size(100));
+  padding-block-end: size(32);
+  margin-inline: size(24);
+  padding-inline: size(24);
+  border-radius: size(10);
+
+  background-color: clr(neutral, 100);
+  color: clr(primary, 900);
+
+  &_details {
+    margin-block-start: size(32);
+    margin-inline-end: size(24);
+
+    & h1 {
+      font-size: fs(600);
+      font-weight: $fw-700;
+
+      @include mq(medium, $type: min) {
+        font-size: fs(800);
+      }
+    }
+
+    & span {
+      font-size: fs(300);
+      font-weight: $fw-400;
+      color: clr(neutral, 900);
+    }
+  }
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  gap: size(16);
+  max-width: 100%;
+  // margin-inline: size(24);
+
+  &_container {
+    --flex-row-gap: 3px;
+    display: flex;
+    flex-direction: column;
+    column-gap: var(--flex-column-gap, $flex-group-gap);
+    row-gap: var(--flex-row-gap, calc($flex-group-gap / 2));
+    > label {
+      font-size: fs(200);
+      font-weight: $fw-400;
+
+      & + input {
+        outline: 0;
+        border: 1px solid clr(neutral, 700);
+        border-radius: size(4);
+        padding-inline-start: size(16);
+        padding-block: size(10);
+        font-size: fs(200);
+        font-weight: $fw-500;
+        // max-width: 80%;
+      }
+    }
+  }
+}

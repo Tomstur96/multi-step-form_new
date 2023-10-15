@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="/scss/main.scss">
+</head>
+
+<body>
+
+  <section class="section_1">
+    <ul class="steps">
+      <li class="steps_container" id="step_1">
+        <a href="#step_1">
+          <span class="steps_number">1</span>
+          <div class="steps_details">
+            <h3>Step 1</h3>
+            <span>Your Info</span>
+          </div>
+        </a>
+      </li>
+      <li class="steps_container" id="step_2">
+        <a href="#step_2">
+          <span class="steps_number">2</span>
+          <div class="steps_details">
+            <h3>Step 2</h3>
+            <span>Select plan</span>
+          </div>
+        </a>
+      </li>
+      <li class="steps_container" id="step_3">
+        <a href="#step_3">
+          <span class="steps_number">3</span>
+          <div class="steps_details">
+            <h3>Step 3</h3>
+            <span>Add-ons</span>
+          </div>
+        </a>
+      </li>
+      <li class="steps_container" id="step_4">
+        <a href="#step_4">
+          <span class="steps_number">4</span>
+          <div class="steps_details">
+            <h3>Step 4</h3>
+            <span>Summary</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section_2">
+
+    <div class="info">
+      <div class="info_details">
+        <h1>Personal info</h1>
+        <span>Please provide your name, email address, and phone
+          number.</span>
+      </div>
+      <form class="formInput" action="#">
+        <div class="formInput_container | ">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="e.g. Stephen King">
+        </div>
+        <div class="formInput_container | ">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com">
+        </div>
+        <div class="formInput_container | ">
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" placeholder="e.g. +1 234 567 890">
+        </div>
+      </form>
+      <div>
+      </div>
+
+  </section>
+
+  <section class="section_3">
+    <button class="button" data-type="outline" status="noShow" type="reset">Go back</button>
+    <button class="button" data-type="accent" type="submit">Next Step</button>
+  </section>
+
+
+  <!-- Sidebar end -->
+
+  <!-- Step 1 start -->
+
+  <!-- Name
+  e.g. Stephen King
+
+  Email Address
+  e.g. stephenking@lorem.com
+
+  Phone Number
+  e.g. +1 234 567 890
+
+  Next Step -->
+
+  <!-- Step 1 end -->
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
