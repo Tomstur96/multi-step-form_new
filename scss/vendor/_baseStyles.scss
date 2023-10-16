@@ -14,7 +14,12 @@ body {
   }
 
   @include mq(large, $type: min) {
-    grid-template-columns: 1fr 4fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
   }
 }
 
@@ -35,11 +40,13 @@ body {
     }
 
     @include mq(large, $type: min) {
-      align-self: center;
-      justify-self: center;
-      background-size: auto;
-      width: 25vw;
-      height: 100%;
+      // align-self: center;
+      // justify-self: center;
+      // background-size: contain;
+      width: auto;
+      min-height: 100%;
+      padding-inline-end: size(100);
+      // display: flex;
     }
   }
 
